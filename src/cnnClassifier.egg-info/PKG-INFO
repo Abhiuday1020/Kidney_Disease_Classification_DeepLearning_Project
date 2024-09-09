@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: cnnClassifier
+Version: 0.0.0
+Summary: A CNN-based deep learning project for predicting kidney disease
+Home-page: https://github.com/Abhiuday1020/Kidney_Disease_Classification_DeepLearning_Project
+Author: Abhiuday1020
+Author-email: abhiuday1020@gmail.com
+Project-URL: Bug Tracker, https://github.com/Abhiuday1020/Kidney_Disease_Classification_DeepLearning_Project/issues
+
+# Kidney_Disease_Classification_DeepLearning_Project
+
+
+
+
+## How to run?
+
+### STEPS:
+
+Clone the Repository
+
+```bash
+https://github.com/Abhiuday1020/Kid_Disease_Classification_DeepLearning
+```

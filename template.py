@@ -2,7 +2,7 @@ import os
 from pathlib import Path
 import logging
 
-logging.basicConfig(level=logging.INFO, format='[%(asctime)s]: %(message)s:')
+logging.basicConfig(level=logging.INFO, format='[%(asctime)s]: %(message)s')
 
 project_name = 'cnnClassifier'
 
@@ -26,19 +26,21 @@ list_of_files = [
     "test.py"
 ]
 
-
 for filepath in list_of_files:
-    filepath = Path(filepath)
-    filedir, filename = os.path.split(filepath)
+    try:
+        filepath = Path(filepath)
+        filedir, filename = os.path.split(filepath)
 
-    if filedir !="":
-        os.makedirs(filedir, exist_ok=True)
-        logging.info(f"Created directory: {filedir} for the file: {filename}")
+        if filedir != "":
+            os.makedirs(filedir, exist_ok=True)
+            logging.info(f"Created directory: {filedir} for the file: {filename}")
 
-    if(not os.path.exists(filepath)) or (os.path.getsize(filepath) == 0):
-        with open(filepath,"w") as f:
-            pass
-            logging.info(f"Created file: {filepath}")    
+        if not os.path.exists(filepath) or os.path.getsize(filepath) == 0:
+            with open(filepath, "w") as f:
+                pass  
+            logging.info(f"Created file: {filepath}")
+        else:
+            logging.info(f"File: {filepath} already exists")
 
-    else:
-        logging.info(f"File: {filepath} already exists")        
+    except Exception as e:
+        logging.error(f"Error while processing file {filepath}: {str(e)}")
